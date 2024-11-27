@@ -38,6 +38,10 @@ func (i Interval) String() string {
 
 // Length returns the length of the interval.
 func (i Interval) Length() int {
+	if i.Stop < i.Start {
+		return 0
+	}
+
 	return i.Stop - i.Start
 }
 
